@@ -1,22 +1,26 @@
 # two-pointer technique
-###### Revision-1 ========================
+###### Re-vision-2 ==========1-3-5==============
+###### 1
 - The two pointer technique is a pattern in which two pointers iterate across the data structure until one or both of them satisfy the necessary condition.
 - **Suitable Data Structures:** Arrays, Linked Lists
 
-#### common patterns in the two-pointer approach:
+### Common patterns in the two-pointer approach:
             
-##### 1. One pointer starts from beginning and other starts from end, they move toward each other until they both meet.
+#### 1. One pointer starts from beginning and other starts from end, they move towards each other until they both meet.
+
 **Example Problems:**
 1. Reverse the characters in a string
-2. Reverse An Array or Part of an array
-3. Rotate Array K times
+2. Reverse an array or part of an array
+3. Rotate array `K` times
 
 
-##### 2. One pointer moves at a slow pace while the other pointer moves at a faster pace.
+
+#### 2. One pointer moves at a slow pace while the other pointer moves at a faster pace.
+
 **Example Problems:**
-
-- remove duplicates from a sorted array
-- 
+1. Remove duplicates from a sorted array
+2. 
+3. 
 
 ## When to Use ?
 1. Whenever problem involves with reverse or rotation
@@ -24,23 +28,108 @@
 3. Middle element in the linked list
 4. 
 
+###### 3
+### Sample Questions Explanations:
 
-#### Classic problems:
+##### 1. Reverse an array:
+- Here we start two pointers one is from i=0  and another from j=n-1
+- we swap (0,n-1) and we increment i++ and decrement j-- until they meet
+- **how do we know whether both pointers are met or not?**
+- if array size `n is odd` then `i==j` otherwise it crosses second pointer `i>j`
 
-1. Remove Duplicates from Sorted Array
-2. Two Sum II - Input array is sorted
-3. Reverse Words in a String II
-4. Rotate Array
-5. Valid Palindrome
-6. Container With Most Water
-7. Product of Array Except Self
-[Source](https://leetcode.com/articles/two-pointer-technique/)
+**Pseudo Code**
+```java
+arr = [1,2,3,4,5]
+n = arr.length
+i=0
+j=n-1
+// swap elements until both pointers meet.
+// below loop will be stopped either i==j or i>j        
+while(i<j){
+    temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+    i++;
+    j--;
+}
 
-https://www.codingninjas.com/studio/library/what-is-a-two-pointer-technique
+```
+##### 2. Valid Palindrome
+- A palindrome is a word, phrase, number, or other sequence of symbols that reads the same backwards as forwards
+- Examples: 
+            
+            - Words: "Level", "madam", "racecar"
+            - Numbers: 22, 1234321, 2002
+            - Dates and times: 12/21/33 12:21
+            - Sentences: "Adam, I'm Ada!", "Ma is as selfless as I am", "Poor Dan is in a droop", "Leon sees Noel"
+**Pseudo Code:**
+1. **Brute-force:** 
+   - Convert current string to char array
+   - iterate over each char and store it int the new array
+   - compare each index char is same or not. it all indexes are same then it is `palindrome`
+2. **Optimization:**
+  - use two-pointer approach first pointer start from `i=0` and another from `j=n-1` move towards opposite direction
+  - compare `str.charAt(i) == str.charAt(j)` if both chars are same then `i++` and `j--`, otherwise return given string is not palindrome
 
-https://www.baeldung.com/java-two-pointer-technique
+```java
+str = 'abcdedcba';
+n=str.size();
+i=0;
+j=n-1;
+while(i<j){
+    if(str.charAt(i) == str.charAt(j)){
+        i++; 
+        j--;
+    }else {
+        return false;    
+    }    
+}
+return true;
+```
 
-https://leetcode.com/articles/two-pointer-technique/
+##### 3. Remove Duplicates from Sorted Array
+- For Example, we have an array `[1,1,2,3,4,4,4,4,5]`
+- if you start `i=0`, `j=1` and compare `arr[i] == arr[j]` means it is a duplicate
+- if it is duplicate then ignore otherwise, add unique number to `i+1`<sup>th</sup> index
+- iterate until `j` reaches to end of the array
+- return `Arrays.copyOfRange(arr,0,i+1)`
+
+```java
+arr = [1,1,2,3,4,4,4,4,5];
+
+if(arr.length ==0 || arr.length ==1){
+    return arr;
+}
+n=arr.length;
+i=0; // first-pointer which is holding unique element's index
+j=1; // second-pointer which iterates the array and find the duplicates
+while(j<n){
+    if(arr[i] != arr[j]){
+        arr[++i] = arr[j];
+    }
+j++;
+}
+return Arrays.copyOfRange(arr, 0, i+1);
+``` 
+
+
+
+###### 5
+#### Assignment problems:
+1. Reverse first 5 elements of an array
+2. Removing Duplicate Email Addresses from mail group
+3. Rotate Array for `K` times
+4. Reverse Words in a String II
+5. [Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
+6. ** [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
+7. [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
+
+
+##### References:
+1. https://leetcode.com/articles/two-pointer-technique/
+2. https://www.codingninjas.com/studio/library/what-is-a-two-pointer-technique
+3. https://www.baeldung.com/java-two-pointer-technique
+
 
 
 
