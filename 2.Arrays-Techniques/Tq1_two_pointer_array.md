@@ -31,11 +31,11 @@
 ###### 3
 ### Sample Questions Explanations:
 
-##### 1. Reverse an array:
+#### 1. Reverse an array:
 - Here we start two pointers one is from i=0  and another from j=n-1
 - we swap (0,n-1) and we increment i++ and decrement j-- until they meet
 - **how do we know whether both pointers are met or not?**
-- if array size `n is odd` then `i==j` otherwise it crosses second pointer `i>j`
+- if array size `n is odd` then `i==j` otherwise first pointer crosses second pointer `i>j`
 
 **Pseudo Code**
 ```java
@@ -54,7 +54,7 @@ while(i<j){
 }
 
 ```
-##### 2. Valid Palindrome
+#### 2. Valid Palindrome
 - A palindrome is a word, phrase, number, or other sequence of symbols that reads the same backwards as forwards
 - Examples: 
             
@@ -87,7 +87,7 @@ while(i<j){
 return true;
 ```
 
-##### 3. Remove Duplicates from Sorted Array
+#### 3. Remove Duplicates from Sorted Array
 - For Example, we have an array `[1,1,2,3,4,4,4,4,5]`
 - if you start `i=0`, `j=1` and compare `arr[i] == arr[j]` means it is a duplicate
 - if it is duplicate then ignore otherwise, add unique number to `i+1`<sup>th</sup> index

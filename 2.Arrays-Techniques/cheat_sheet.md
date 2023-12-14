@@ -1,7 +1,16 @@
 # Array Techniques Cheat Sheet
 
-### Prefix Sum:
+### Range/Prefix Sum Query Technique:
+- Prefix Sum Array Creation:
+        
+        - if i==0, pfSum[0] = arr[0]
+        - otherwise, pfSum[i] = pfSum[i-1]+arr[i]
+- Calculate Range Sum[L,R]:
+        
+        - if L==0, pfSum[R]
+        - otherwise, rangeSum = pfSum[R]-pfSum[L-1]
 
+    
 ### sub arrays:
         
         - Num of sub arrays in an array = n(n+1)/2

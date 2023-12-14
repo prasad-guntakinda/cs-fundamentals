@@ -1,9 +1,11 @@
 # Range Sum Query:
-##### Revision-1=================
+##### Revision-2=================
+
+###### 1
 - The range sum query technique is a method for answering queries that ask for the sum of a range of elements in an array.
 - The basic idea behind the range sum query technique is to precompute the sum of all the elements in the array.
-- This can be done by creating a prefix sum array, which is an array where the ith element is equal to the sum of all the elements in the array from index 0 to index i.
-- `prefixSum[i] = prefixSum[0]+ prefixSum[1]+ .....+ prefixSum[i-1] + prefixSum[i]`
+- This can be done by creating a prefix sum array, which is an array where the `i`<sup>th</sup> element is equal to the sum of all the elements in the array from index `0` to index `i`.
+- `prefixSum[i] = arr[0]+ arr[1]+ .....+ arr[i-1] + arr[i]`
 
 ### How to create a Prefix Sum Array?
 
@@ -17,21 +19,34 @@
                 prefixSum[i] = prefixSum[i-1] + input[i];
         }
 ```
-- Remember this: `prefixSum[i] = prefixSum[0]+ prefixSum[1]+ .....+ prefixSum[i-1]+prefixSum[i]`
-- as part of cumulative sum if you want ot find the sum of `ith` element you can directly add `ith` value to previous sum(which is `i-1th` sum)  `prefixSum[i] = prefixSum[i-1] + input[i]`
+- Remember this: `prefixSum[i] = arr[0]+ arr[1]+ .....+ arr[i-1] + arr[i]`
+- As part of cumulative sum, if you want ot find the sum of `i`<sup>th</sup> element you can directly add `i`<sup>th</sup> value to previous sum(which is `i-1`<sup>th</sup> sum) i.e  `prefixSum[i] = prefixSum[i-1] + input[i]`
 
-
-### How to calculate range_sum from prefix sum array?
+### How to answer the range_sum queries by using prefix sum array?
 
 - Once the prefix sum array has been created, answering a range sum query is very simple.
-- To answer a query that asks for the sum of the elements in the range from index 'L' to index 'R', 
-- range sum[L, R]:
+- To answer a query that asks for the sum of the elements in the range from index `L` to index `R`, 
+- **Range sum[L, R]:**
   
         - If L==0 then range sum = prefixSum[R]
         - Otherwise,
         - we simply subtract the sum of the elements in the range from index 0 to index L-1 from the sum of the elements in the range from index 0 to index R.
-        - rangeSum[L,R] = prefixSum[R]-prefixSum[L-1]
+        - RangeSum[L,R] = prefixSum[R]-prefixSum[L-1]
+##### Note:
+- in prefixSum array every element is the cumulative sum of input array from  0 to i
+- prefixSum[i] is always gives the sum from 0 to i
+- If you want sum only from particular range then you have to subtract left-side index sum
+- Example: 
+```text
+    Range sum of [3,6]
+    pfSum[6] = arr[0]+arr[1]+arr[2]+arr[3]+arr[4]+arr[5]+arr[6]
+    To get range from 3 to 6 then you have to remove arr[0]+arr[1]+arr[2] from pfSum[6]
+    which is nothing but pfSum[2] = arr[0]+arr[1]+arr[2]
+    As per the query we want to include arr[3] into the sum
+    Finally, range sum [3,6] = pfSum[6]-pfSum[3-1]
+    if you don't want to include index 3 then you can simply use range sum (3,6] = pfSum[6]-pfSum[3]
 
+```
   
 ### When to Use?
 
@@ -42,11 +57,42 @@
         - Locate subarrays of two arrays that are the same length and sum
         - Simulate parallel algorithms
 
+###### 3
 #### Example:
-- Let us take cricket score board example
-- 
+- For better understanding let us take cricket score board example
+- we have 10 overs score: {5,6,18,14,12,0,1,8,20,0}
+- Question: what are the scores in the invervals of [0,5], [3,6], [2,7], [0,8],[0,5], [0,10] ?
+
+- **Brute-Force:**
+    - for each interval iterate over the array from startIndex to endIndex and calculate the sum
+    - Time Complexity: for every query `N` iterations N=size of the array, so for `K` queries we need to iterate `K*N` times, for `K>=N` it will be O(N^2)
+- Is there way to optimize this?
+yes, by using Range Sum we can solve this problem in `T.C = O(N)`
+
+**Prefix Sum Technique:**
+
+- Given input: {5,6,18,14,12,0,1,8,20,0}
+- first we calculate prefix sum array:
+- pfSum[] = {5,5+6,5+6+18,5+6+18+14,5+6+18+14+12, 5+6+18+14+12+0, 5+6+18+14+12+0+1,  5+6+18+14+12+0+1+8, 5+6+18+14+12+0+1+8+20, 5+6+18+14+12+0+1+8+20+0 }
+- pfSum[] = {5,11,29,43,55,55,56,65,85,85}
+- Queries: [0,5], [3,6], [2,7], [0,8],[0,5], [0,10]
+- Formula: if L=0 then pfSum[R], otherwise pfSum[R]-pfSum[L-1]
+- [0,5] => pfSum[5]
+- [3,6] => pfSum[6] - pfSum[3-1], ... so on
+
+**Pseudo Code:**
 ```java
-  //TODO: add cricket score board example for better understanding
+  arr[] = {5,6,18,14,12,0,1,8,20,0};
+  pfSum = calculatePrefixSum();
+  qs[][] = [[0,5], [3,6], [2,7], [0,8],[0,5], [0,10]]
+  for(int i=0;i<qs.length;i++){
+    int L = qa[i][0];
+    int R = qa[i][R];
+    if(L==0)
+        int rangeSum = pfSum[R];
+    else
+        int rangeSum = pfSum[R]-pfSum[L-1];
+  }
 
 ```
 
@@ -60,6 +106,7 @@
         - If L=0 then rangeSum[L,R] = pfSum[R]
         - Otherwise, rangeSum[L,R] = pfSum[R]-pfSum[L-1]
 
+###### 5 
 ### Problems
 1. Q4.Given an array, arr[] of size N, the task is to find the count of array indices such that removing an element from these indices makes the sum of even-indexed and odd-indexed array elements equal.
 2. Q3. You are given an integer array A of length N.
