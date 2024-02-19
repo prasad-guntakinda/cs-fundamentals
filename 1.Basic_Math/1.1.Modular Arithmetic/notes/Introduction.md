@@ -20,7 +20,7 @@
 
 - we need a max multiples of 7 where it is <= -40. `-35 > -40` and `-42 < -40`
 - So -40-(-42) = -40+42 = 2
-
+- To avoid negative remainders, always add +mod to dividend. Example -40%7 = -5 => -5+7 = 2
 ##### Observations:
 - Divisors & Remainders are always +ve 
 - The remainder value is always between [0, Divisor-1]. Example: `?? % 4 = [0, 3]`
