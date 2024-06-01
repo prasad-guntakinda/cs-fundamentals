@@ -1,25 +1,24 @@
 # Hashing Problems List:
 
-####### SCD-32 & 33
+## Easy
+- [x] 1.Check Pair Sum
+- [x] 2.Count Pair Difference
+- [x] 3.Longest Subarray Zero Sum
+- [x] 4.Count Pair Sum
+- [x] 5.Subarray with given sum
+- [x] 6.Frequency of element query
+- [x] 7.Count distinct elements
+- [x] 8.First Repeating element
+- [x] 9.Sub-array with Zero sum
+- [x] 10.Common Elements
+- [x] 11.Count unique elements
+- [x] 12.Count Subarray Zero Sum
 
-Q1. Check Pair Sum:
-````text
-Given an Array of integers arr, and a target sum K.
-Check if there exists a pair (i,j) such that arr[i] + arr[j] = K and i!=j.
-````
-__code:__
-````java
-public int solve(int[] arr, int k) {
-        HashSet < Integer > set = new HashSet < Integer > ();
-        for(int i = 0 ; i < arr.length ; i++){
-            if(set.contains(k - arr[i])){
-                return 1;
-            }
-            set.add(arr[i]);
-        }
-        return 0;
-    }
-````
+## Medium
+- [x] 1.Subarray Sum Equals K
+- [x] 2.Distinct Numbers in Window
+
+## Hard
 
 
 

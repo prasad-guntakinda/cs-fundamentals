@@ -1,14 +1,25 @@
+# Two-Pointers 
+
 # two-pointer technique
 ###### Re-vision-2 ==========1-3-5==============
 ###### 1
 - The two-pointer technique is a pattern in which two pointers iterate across the data structure until one or both of them satisfy the necessary condition.
-- **Suitable Data Structures:** Arrays, Linked Lists
+- Two questions should be clear while using two-pointer approach
+        
+            1. Where do you place two-pointers initially?
+            2. How do you move your pointers?
 
-### Common patterns in the two-pointer approach:
+- **Suitable Data Structures:** Mostly linear DS like Arrays, Linked Lists
+
+### Common patterns of two-pointer approach:
             
-#### 1. One pointer starts from beginning and other starts from end, they move towards each other until they both meet.
+            1. Single Array with Two Pointers(start, end)
+            2. Two Arrays with Two Pointers (start, start)
+            3. Fast and Slow Technique 
 
-**Example Problems:**
+#### 1. One pointer starts from beginning and the other starts from an end, they move towards each other until they both meet.
+
+__Example Problems:__
 1. Reverse the characters in a string
 2. Reverse an array or part of an array
 3. Rotate array `K` times
@@ -19,20 +30,20 @@
 
 **Example Problems:**
 1. Remove duplicates from a sorted array
-2. 
-3. 
+2. Finding Loop in the Linked List
+3.
 
-## When to Use ?
-1. Whenever problem involves with reverse or rotation
-2. Whenever you are looping through array multiple times
+## When to Use?
+1. Whenever a problem involves with reverse or rotation
+2. Whenever you are looping through an array multiple times
 3. Middle element in the linked list
-4. 
+4. Finding Loop in the Linked List
 
 ###### 3
 ### Sample Questions Explanations:
 
 #### 1. Reverse an array:
-- Here we start two pointers one is from i=0  and another from j=n-1
+- Here we start two pointers, one is from i=0  and another from j=n-1
 - we swap (0,n-1) and we increment i++ and decrement j-- until they meet
 - **how do we know whether both pointers are met or not?**
 - if array size `n is odd` then `i==j` otherwise first pointer crosses second pointer `i>j`
@@ -58,20 +69,20 @@ public int[] reverseAnArray(int[] arr){
 ```
 #### 2. Valid Palindrome
 - A palindrome is a word, phrase, number, or other sequence of symbols that reads the same backwards as forwards
-- Examples: 
-            
+- Examples:
+
             - Words: "Level", "madam", "racecar"
             - Numbers: 22, 1234321, 2002
             - Dates and times: 12/21/33 12:21
             - Sentences: "Adam, I'm Ada!", "Ma is as selfless as I am", "Poor Dan is in a droop", "Leon sees Noel"
 **Pseudo Code:**
-1. **Brute-force:** 
-   - Convert current string to char array
-   - iterate over each char and store it int the new array
-   - compare each index char is same or not. it all indexes are same then it is `palindrome`
+1. **Brute-force:**
+    - Convert current string to char array
+    - iterate over each char and store it int the new array
+    - compare each index char is same or not. it all indexes are same then it is `palindrome`
 2. **Optimization:**
-  - use two-pointer approach first pointer start from `i=0` and another from `j=n-1` move towards opposite direction
-  - compare `str.charAt(i) == str.charAt(j)` if both chars are same then `i++` and `j--`, otherwise return given string is not palindrome
+- use two-pointer approach first pointer start from `i=0` and another from `j=n-1` move towards opposite direction
+- compare `str.charAt(i) == str.charAt(j)` if both chars are same then `i++` and `j--`, otherwise return given string is not palindrome
 
 ```java
 //    str = 'abcdedcba';
