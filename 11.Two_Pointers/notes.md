@@ -67,40 +67,56 @@ public int[] reverseAnArray(int[] arr){
 }
 
 ```
-#### 2. Valid Palindrome
-- A palindrome is a word, phrase, number, or other sequence of symbols that reads the same backwards as forwards
-- Examples:
+#### Two Diff in a Sorted Array:
+__Problem:__
+````text
+Given a sorted array, count pairs i,j such that arr[j] - arr[i] == k 
+Examples: 
+ar = [ -5 -2 1 8 10 12 15] k = 11 Ans: count =1 (12-1 = 11)
+ar = [2, 4, 8] k=1 Ans: 0
+````
 
-            - Words: "Level", "madam", "racecar"
-            - Numbers: 22, 1234321, 2002
-            - Dates and times: 12/21/33 12:21
-            - Sentences: "Adam, I'm Ada!", "Ma is as selfless as I am", "Poor Dan is in a droop", "Leon sees Noel"
-**Pseudo Code:**
-1. **Brute-force:**
-    - Convert current string to char array
-    - iterate over each char and store it int the new array
-    - compare each index char is same or not. it all indexes are same then it is `palindrome`
-2. **Optimization:**
-- use two-pointer approach first pointer start from `i=0` and another from `j=n-1` move towards opposite direction
-- compare `str.charAt(i) == str.charAt(j)` if both chars are same then `i++` and `j--`, otherwise return given string is not palindrome
-
-```java
-//    str = 'abcdedcba';
-public static boolean isPalindrome(String str){
-    int n=str.length();
-    int i=0;
-    int j=n-1;
-    while(i<j){
-        if(str.charAt(i) == str.charAt(j)){
-            i++;
-            j--;
-        }else {
-            return false;
-        }
+__Approaches:__
+1. Brute Force: two loops
+2. Hashmap: finding complement
+3. Binary Search:
+4. Two-pointers: Optimized
+    - Where to start two pointers? i=0, j=1
+    - How to move two pointers? Based on the diff value 
+````java
+var ans =0;
+//9-4 = 5 how to decrease diff by subtracting large values 9-5, 9-6,9-7 so here i should be increased
+if(arr[j]-arr[i] > k){
+    i++;
+    //possibility of collisiion ar = [2, 4, 8] k=1 4-2>1 i++ i=4, j=4 we cannot use same element so if i==j then we need to increase j
+   if(i == j)
+       j++;
+}else if(arr[j] - arr[i] < k) { //9-4 = 5 how to increase diff by subtracting from larger values 10-5, 11-6,12-7 so here j should be increased
+    j++;
+}else { // here we need to handle duplicates also [3, 3,5,6,6,8,8] k=3 
+ if(arr[i] == arr[j]){
+    int freq = j-i; //freq c 2
+    ans += (freq*(freq-1))/2;
+ }else {
+    var temp1 = arr[i];
+    var count1 = 0;
+    while(arr[i] == temp1){
+        count1++;
+        i++;
     }
-    return true;
+    var temp2 = arr[j];
+    var count2 = 0;
+    while(arr[j] == temp2){
+        count2++;
+        j++;
+    }
+    ans += (count1*count2);
+  }
+ 
 }
-```
+````
+
+![two_diff_in_sorted_array_solution.png](images/two_diff_in_sorted_array_solution.png)
 
 #### 3. Remove Duplicates from Sorted Array
 - For Example, we have an array `[1,1,2,3,4,4,4,4,5]`

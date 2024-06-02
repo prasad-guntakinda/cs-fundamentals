@@ -15,8 +15,11 @@
 ## MEDIUM:
 
 - [ ] 1.[Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
-- [ ] ** 2.[Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
+- [ ] 2.Two Diff in a Sorted Array: arr[j]-arr[i] = k
+- [ ] 3.Sub-array sum with K 
+- [ ] ** 4.[Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
 - [ ] 3.[Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
+- [ ]
 
 
 
