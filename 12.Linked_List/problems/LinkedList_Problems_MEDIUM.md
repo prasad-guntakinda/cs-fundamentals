@@ -23,7 +23,7 @@ __1. Brute Force:__
 
 __2. Optimized:__ But LL will be broken
 
-![merge_sorted_LLs.png](merge_sorted_LLs.png)
+![merge_sorted_LLs.png](../images/merge_sorted_LLs.png)
 
 - Take two pointers one is for result head h3 another is a tail pointer, initially assign with dummy node
 - Iterate through both the lists, move tail pointer along with the merging.
@@ -142,7 +142,7 @@ If Loop exists remove the loop
 
 ````
 
-![linked_list_loop_ps.png](linked_list_loop_ps.png)
+![linked_list_loop_ps.png](../images/linked_list_loop_ps.png)
 
 Q3.1 Check Whether Loops Exist or Not
 
@@ -176,7 +176,7 @@ __2.Optimized: fast-slow pointer__
 - Move a slow pointer with one node at a time and move a fast pointer with double the speed
 - At some point both pointers meet
 
-![fast-slow-pointer_approach_sol.png](fast-slow-pointer_approach_sol.png)
+![fast-slow-pointer_approach_sol.png](../images/fast-slow-pointer_approach_sol.png)
 
 ```java
 public  static boolean isLoopExistsFastSlowPointer(ListNode head){
@@ -234,9 +234,9 @@ public static void detectAndBreakLoop(ListNode head){
 - How does it meet at loop beginning node?
 - See the Explanation Below
 
-![loop_break_explanation_1.png](loop_break_explanation_1.png)
+![loop_break_explanation_1.png](../images/loop_break_explanation_1.png)
 
-![loop_break_explanation_2.png](loop_break_explanation_2.png)
+![loop_break_explanation_2.png](../images/loop_break_explanation_2.png)
 
 
 

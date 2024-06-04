@@ -55,7 +55,7 @@ __1. Finding Length and Dividing (Double-Traversal):__
 - Navigate until (len-1)/2 why not len/2 ? For even len we want mid to point for the first middle, if we make (len-1)/2 it works for both use cases.
  
  
-![find_middle_double_traversal.png](find_middle_double_traversal.png)
+![find_middle_double_traversal.png](../images/find_middle_double_traversal.png)
 
 
 __2.Two-Pointers: Fast & Slow Pointer Approach__
@@ -64,7 +64,7 @@ __2.Two-Pointers: Fast & Slow Pointer Approach__
 - Increment **slow_ptr** by 1 step and **fast_ptr** by 2 steps, As a result, the fast pointer will travel double than that of the slow pointer. 
 - So When the fast pointer will reach to the end of the linked list, slow point would still be at the middle of the linked list.
 
-![fast_slow_mid_1.png](fast_slow_mid_1.png)
+![fast_slow_mid_1.png](../images/fast_slow_mid_1.png)
 
 
         - Initialize two pointers slow_ptr and fast_ptr and point both of them to the head node.
@@ -73,7 +73,7 @@ __2.Two-Pointers: Fast & Slow Pointer Approach__
 __CODE:__
 
 
-![fast_slow_mid_code.png](fast_slow_mid_code.png)
+![fast_slow_mid_code.png](../images/fast_slow_mid_code.png)
 
 
 </details>
