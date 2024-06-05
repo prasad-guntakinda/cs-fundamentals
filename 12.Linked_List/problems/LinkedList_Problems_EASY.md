@@ -128,5 +128,107 @@ public static boolean isListPalindrome(ListNode head){
 
 ___
 
+<details>
+<summary>Q4.Intersection of Two Linked Lists:</summary>
 
+__Problem Statement:__
+````text
+Given two Linked Lists with sizes M and N.
+Check whether two LLs are intersected
+````
+![linked_list_intersection.png](../images/linked_list_intersection.png)
+
+
+__Brute Force: HashSet__
+- Iterate over first LL and store all nodes in a Hashset
+- While Iterating second LL check for each node if it exists in HashSet or not.
+- If Yes, there is an intersection. 
+- TC: O(M+N) SC: O(M) or O(N) sizes of the LL which stored in HashSet
+
+__Optimization: Two Pointers__
+- Find the lengths of both LLs ( M, N)
+- Whichever LL length is more move large LL pointer with difference(M-N) if M>N
+- For Example, M=6 and N=4 then move M length LL pointer to 2 nodes then both LLs are at same length
+- Now iterate both the pointers together and check both ponters are same or not
+
+````java
+public static  boolean isLLsIntersected(ListNode h1, ListNode h2){
+    if(h1 == null || h2 == null)
+        return false;
+
+    var h1Len = findLength(h1);
+    var h2Len = findLength(h2);
+
+    if(h1Len > h2Len){
+        var diff = h1Len-h2Len;
+        while (diff>0){
+            h1 = h1.next;
+            diff--;
+        }
+    }else if(h2Len > h1Len){
+        var diff = h2Len-h1Len;
+        while (diff>0){
+            h2 = h2.next;
+            diff--;
+        }
+    }
+
+    while(h1 != null && h2 != null){
+        if(h1 == h2){
+            System.out.println("Lists Intersected at: "+h1.val);
+            return true;
+        }
+        h1 = h1.next;
+        h2 = h2.next;
+    }
+    return false;
+}
+
+private static int findLength(ListNode h1) {
+    var temp = h1;
+    var len = 0;
+    while (temp != null){
+        len++;
+        temp = temp.next;
+    }
+    return len;
+}
+````
+
+__Q4.1 Intersection of Two Linked Lists:__
+
+__Problem Statement:__
+````text
+If we know intersection is already present then finding intersection point
+````
+
+![intersection_LLs_problem_2.png](../images/intersection_LLs_problem_2.png)
+
+__Approach:__
+
+![intersection_LLs_problem_2.png](../images/intersection_LLs_problem_2_sol.png)
+
+
+
+</details>
+
+___
+
+
+<details>
+<summary>QX.Problem Name [Sample Structure]</summary>
+
+__Problem Statement:__
+
+
+__Brute Force:__
+
+__Optimization:__
+
+
+__Notes:__
+
+</details>
+
+___
 
