@@ -1,11 +1,11 @@
 # Todo Items Lists:
 
-- [ ] [0.Problem-Solving Basics](./0.Introduction)
+- [ ] [0.Problem-Solving Basics](./00.Introduction)
   - [ ] Time Complexity
   - [ ] Space Complexity
   - [ ] Problem List
 ---
-- [ ] [1.Basic Math](./1.Basic_Math)
+- [ ] [1.Basic Math](./01.Basic_Math)
     - [ ] Number Sequence and Series
       - [ ] Arithmetic Progression
       - [ ] Geometric Progression
@@ -26,7 +26,7 @@
     - [ ] Problem List  
     - [ ] Cheat Sheet 
 ---
-- [ ] [2.Arrays](./2.Arrays)
+- [ ] [2.Arrays](./02.Arrays)
   - [ ] 1D Arrays
     - [ ] Introduction
     - [ ] Two Pointer Approach
@@ -59,13 +59,13 @@
 
 ---
 
-- [ ] [5.Bit Manipulation](./5.Bit_Manipulation)
+- [ ] [5.Bit Manipulation](./05.Bit_Manipulation)
   - [ ] Introduction
   - [ ] Bit Masking
   - [ ] Problems-List
 
 ---
-- [ ] [6.Recursion and Backtracking](./6.Recursion_and_Backtracking)
+- [ ] [6.Recursion and Backtracking](./06.Recursion_and_Backtracking)
   - [ ] Introduction
   - [ ] Problems-List
 
@@ -83,14 +83,14 @@
 --- 
 
 
-- [ ] [8.Hashing](./8.Hashing)
+- [ ] [8.Hashing](./08.Hashing)
   - [ ] Introduction
   - [ ] Advanced Questions
   - [ ] Internal Implementation
   - [ ] Problems List
 
 ---
-- [ ] [9.Sorting](./9.Sorting)
+- [ ] [9.Sorting](./09.Sorting)
     - [ ] Sorting Basics
     - [ ] Selection Sort
     - [ ] Insertion Sort

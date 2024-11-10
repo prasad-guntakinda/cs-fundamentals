@@ -1,6 +1,10 @@
 # Arrays Problems List
-## 1D array Problems
 
+
+
+## EASY
+
+- [ ] Reverse An Array
 ### 1. Basic Problems
 
 ### 2. Array Techniques

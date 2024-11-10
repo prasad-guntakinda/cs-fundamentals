@@ -20,6 +20,6 @@
 
 #### When to use which technique?
 - Sum of some random sub arrays ==> use range-sum technique
-- Sum of all sub arrays ==> use carry-forward technique
+- Sum of all subarrays ==> use carry-forward technique
 - Sum of all sub arrays sum ==> contribution technique
-- Sum of fixed size window ==> sliding window
+- Sum of a fixed size window ==> sliding window

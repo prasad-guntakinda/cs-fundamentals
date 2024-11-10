@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/cs-fundamentals.iml" filepath="$PROJECT_DIR$/.idea/cs-fundamentals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DSA-Practices.iml" filepath="$PROJECT_DIR$/.idea/DSA-Practices.iml" />
     </modules>
   </component>
 </project>
