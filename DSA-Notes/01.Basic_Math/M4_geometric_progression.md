@@ -17,7 +17,7 @@ If r=1, then S<sub>n</sub> =  a + a + a + ⋯ a= na
 
 When r ≠ 1,
 
-![gp_sum_of_n_terms.png](gp_sum_of_n_terms.png)
+![gp_sum_of_n_terms.png](images/gp_sum_of_n_terms.png)
 
 ##### Sum of GP for Infinite Terms:
 
@@ -25,7 +25,7 @@ When r ≠ 1,
 - The formula to find the sum to infinity of the given GP is:
 
 
-![gp_sum_of_infinite.png](gp_sum_of_infinite.png)
+![gp_sum_of_infinite.png](images/gp_sum_of_infinite.png)
 
 Here,
 

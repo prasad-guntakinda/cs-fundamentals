@@ -4,30 +4,24 @@
 
 ## EASY
 
+### Two-Pointers Technique:
+
 - [ ] Reverse An Array
-### 1. Basic Problems
+- [ ] Valid Palindrome
+- [ ] Remove Duplicates from Sorted Array
+- [ ] Removing Duplicate Email Addresses from a mail group
+- [ ] Rotate Array for `K` times
+- [ ] Reverse Words in a String
+- [ ] *[Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
+- [ ] *[Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
+- [ ] *[Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
 
-### 2. Array Techniques
-<details>
-
-<summary> 1. Two Pointer Array Technique </summary>
-
-### 1. Two Pointer Array Technique:
-1. [Reverse An Array]()
-2. [Valid Palindrome]()
-3. [Remove Duplicates from Sorted Array]()
-4. Reverse first 5 elements of an array
-5. Removing Duplicate Email Addresses from mail group
-6. Rotate Array for `K` times
-7. Reverse Words in a String
-8. [Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
-9. [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
-10. [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
-
-</details>
+### PrefixSum Technique:
 
 
-### 3. SubArrays
+
+
+### SubArrays
 1. Maximum sum of subarray (Kadane's Algorithm)
 
 

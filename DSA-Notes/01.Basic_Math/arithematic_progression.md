@@ -21,7 +21,7 @@ In mathematics, there are three different types of progressions. They are:
 - n<sup>th</sup> term  : a<sub>n</sub> `= a+(n-1)d`
 - Sum of `n` terms: S  = n/2 (first term + last term) =  S<sub>n</sub>`= n/2(2a+(n-1)*d)`
 
-![AP_formulas.png](AP_formulas.png)
+![AP_formulas.png](images/AP_formulas.png)
 
 
 #### Examples:
