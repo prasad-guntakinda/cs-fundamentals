@@ -42,6 +42,12 @@ mysql_secure_installation
 - To list databases: `SHOW DATABASES;`
 - To select a database: `USE <database_name>;`
 - To exit the MySQL client: `\q or exit`
+
+
+
+#### how to configure mysql to accept remote connections?
+
+
 #### Source:
 
 1. https://docs.redhat.com/fr/documentation/red_hat_enterprise_linux/9/html/configuring_and_using_database_servers/installing-mysql_assembly_using-mysql
