@@ -1,5 +1,11 @@
 # MySQL Intallation Guide on RHEL 9
 
+
+## Windows:
+- username: root/root
+
+## RHEL 9
+
 ```shell
 #Install MySQL server packages
 dnf install mysql-server
